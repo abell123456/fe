@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// intercept javascript
+// intercept css
 app.use(cssInterceptor(devDir));
 
 // webpack
