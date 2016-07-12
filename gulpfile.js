@@ -41,16 +41,6 @@ gulp.task('html', ['clean'], function() {
         throw new gutil.PluginError("html", '请输入编译环境');
     }
 
-    // gulp.src(['dev/*.jade'])
-    //     .pipe(jade({
-    //         locals: {
-    //             development: argv.e === 'development',
-    //             production: argv.e = 'production'
-    //         },
-    //         pretty: true
-    //     }))
-    //     .pipe(gulp.dest('dist'));
-
     gulp.src('dev/**/*.hbs')
         .pipe(handlebars(null, {
             helpers: helpers('production')

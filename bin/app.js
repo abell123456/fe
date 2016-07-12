@@ -20,6 +20,8 @@ var path = require('path'),
 var argv = require('optimist').argv;
 var hbs = require('hbs');
 
+var cssInterceptor = require('./cssInterceptor');
+
 // views
 var helpers = require('./helpers')(argv.v || 'development');
 Object.keys(helpers).forEach(function(key) {
@@ -33,6 +35,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+
+// intercept javascript
+app.use(cssInterceptor(devDir));
 
 // webpack
 var mapFilePath = path.join(mockDir, '_map.js'),
