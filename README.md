@@ -13,7 +13,7 @@
 
 
 ## Installation
-方法1：直接clone本项目，然后执行
+直接clone本项目，然后执行
 
     npm install
 
